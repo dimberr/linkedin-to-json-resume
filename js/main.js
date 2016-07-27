@@ -190,8 +190,10 @@ import save from './file.js';
 
       Promise.all(promises).then(function() {
         filedrag.innerHTML = 'Dropped! See the resulting JSON Resume at the bottom.';
-        var output = document.getElementById('output');
-        output.innerHTML = JSON.stringify(linkedinToJsonResume.getOutput(), undefined, 2);
+        //var output = document.getElementById('output');
+        //output.innerHTML = JSON.stringify(linkedinToJsonResume.getOutput(), undefined, 2);
+        var data = JSON.stringify(linkedinToJsonResume.getOutput(), undefined, 2);
+        fillData(data);
         Prism.highlightElement(output);
         downloadButton.style.display = 'block';
         document.getElementById('result').style.display = 'block';
